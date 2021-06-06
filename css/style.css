@@ -54,7 +54,11 @@ h4 {
 img {
   width: 100%;
 }
-
+.gate {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
 .button.contact {
   background-color: transparent;
   color: #ff7f50;
@@ -73,11 +77,13 @@ img {
   color: #ffffff;
   /* needed to override the default link color */
   font-weight: 400;
+  text-decoration: none;
   padding: 10px;
   border-radius: 3px;
   border-bottom: 2px solid #994c30;
   /* width of the border, type, color */
-  transition: 0.2s opacity;
+  transition-duration: 0.2s;
+  transition-property: opacity;
 }
 .button:hover {
   opacity: 0.8; /* Reduces the opacity of the button to 80% */
@@ -108,8 +114,16 @@ padding: 0 15px;
 .row {
   margin: 25px 0; /* 25px top and bottom, 0 left and right */
 }
-#work .row { padding-bottom: 25px; border-bottom: 1px solid #ffffff;}
-
+.row: :after {
+  content: "";
+  clear: both;
+  display: table;
+}
+#work .row { padding-bottom: 25px; border-bottom: 1px solid #ffffff;
+}
+#hero span {
+  display: block;
+}
 #hero h1 {
   text-align: center;
 }
@@ -118,7 +132,80 @@ padding: 0 15px;
   padding: 20px 0;
   display: inline-block;
   width: 100%;
+  text-align: center;
 }
 .center {
   text-align: center;
+}
+/* ==============================
+Medium devices (640px and larger)
+================================= */
+@media only screen and (min-width: 640px) {
+  header {
+    text-align: unset;
+    padding: 20px 0 13px;
+  }
+  nav {
+    width: auto;
+    float: right;
+    margin-top: 4px;
+  }
+  .col-md-6 {
+    width: 50%;
+    text-align: center;
+  }
+}
+[class*="col-"] {
+  float: left;
+}
+#about-page h3 { margin-top: 0;}
+/* ==============================
+Large devices (1024px or larger)
+================================= */
+@media only screen and (min-width: 1024px) {
+  .col-lg-5 {
+    width: 42%
+  }
+  .col-lg-7 {
+    width: 58%
+  }
+  .container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+/* ==============================
+X-large devices (1440px or larger)
+================================= */
+@media only screen and (min-width: 1440px) {
+}
+@keyframes color-change {
+  from {fill: #edc655;}
+  to {fill: #f76414;}
+}
+@keyframes cloud-move {
+  from {transform: translate(0,50px);}
+  to {transform: translate(200px,50px);}
+}
+@keyframes cloud-move-reverse {
+  from {transform: translate(446px,48px);}
+  to {transform: translate(100px, 48px);}
+}
+.sun {
+  animation-duration: 4s;
+  animation-name: color-change;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+}
+.cloud-front {
+  animation-duration: 30s;
+  animation-name: cloud-move;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+}
+.cloud-back {
+  animation: 34s cloud-move-reverse infinite alternate linear;
 }
