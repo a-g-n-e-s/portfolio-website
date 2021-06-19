@@ -9,21 +9,41 @@
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <meta charset="utf-8">
   <title>Agnes Kovacs UX Portfolio</title>
+  <script src="https://kit.fontawesome.com/2dd76a315e.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-  <header id="navigation">
+  <!--<header id="navigation">
     <div class="container">
+      <div class="navtoggle" id="myNavtoggle">
+        <img class="logo" src="https://livejones.com/wp-content/uploads/2020/05/logo-Placeholder.png" alt="Agnes Kovacs">
+        <nav>
+          <ul>
+            <li><a href="index.html">Work</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+-->
+<header id="navigation">
+  <div class="container">
+    <div class="navtoggle" id="myNavtoggle">
       <img class="logo" src="https://livejones.com/wp-content/uploads/2020/05/logo-Placeholder.png" alt="Agnes Kovacs">
       <nav>
         <ul>
           <li><a href="index.html">Work</a></li>
           <li><a href="about.html">About</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#contact" onclick="menuToggle()">Contact</a></li>
+          <li><a href="javascript:void(0);" class="icon" onclick="menuToggle()"><i class="fas fa-bars"></i></a></li>
         </ul>
       </nav>
     </div>
-  </header>
+  </div>
+</header>
+
 
   <main id="project">
     <div id="hero">
@@ -190,6 +210,7 @@
       </div>
     </div>
   </footer>
+    <script src="js/scripts.js"></script>
 </body>
 
 </html>

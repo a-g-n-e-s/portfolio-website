@@ -1,30 +1,59 @@
 header {
   background-color: #F9D673;
-  text-align: center;
-  padding: 10px 0;
+  padding: 10px 0 4px;
   box-shadow: 0px 10px 13px -3px rgba(50, 50, 50, 0.65);
   position: relative;
   width: 100%;
 }
-nav > ul {
+
+nav>ul {
   list-style-type: none;
   padding: 0px;
+  margin: 0;
 }
-nav > ul > li {
-  display: inline-block;
-}
-nav > ul > li > a {
+
+nav>ul>li>a {
   padding: 0 15px;
   text-transform: uppercase;
   font-weight: 700;
   color: #F9D673
 }
+
 body {
   background-color: #3B40A7;
   font-family: 'Nunito', sans-serif;
   font-size: 16px;
   font-weight: 300;
   color: #000000;
+}
+
+.navtoggle li:not(:last-child) {
+  display: none;
+}
+.navtoggle, .navtoggle.responsive {
+  position: relative;
+}
+.navtoggle li .icon {
+  position: absolute;
+  right: 0;
+  top: 2px;
+  font-size: 20px;
+  padding: 0;
+}
+.navtoggle.responsive li  {
+  display: block;
+}
+.navtoggle.responsive nav {
+  padding: 24px 0 0;
+}
+.navtoggle.responsive li  {
+  display: block;
+  padding: 10px 0;
+  border-top: 1px solid rgba(255,127,80,0.5);
+}
+
+.navtoggle.responsive li:last-child  {
+  padding: 0 0 10px;
 }
 h1, h2, h3, h4 {
   line-height: 1.4;
@@ -53,11 +82,13 @@ h4 {
 img {
   width: 100%;
 }
+
 .gate {
   width: 100%;
   max-width: 100%;
   height: auto;
 }
+
 .button.contact {
   background-color: transparent;
   color: #ff7f50;
@@ -65,10 +96,12 @@ img {
   border: 2px solid #ff7f50;
   margin: 10px;
 }
+
 .button.contact:hover {
   background-color: #ff7f50;
   color: #ffffff;
 }
+
 .button {
   display: inline-block;
   /* since the <a> tag is inline by default, we need to change this to inline-block */
@@ -84,48 +117,68 @@ img {
   transition-duration: 0.2s;
   transition-property: opacity;
 }
+
 .button:hover {
-  opacity: 0.8; /* Reduces the opacity of the button to 80% */
+  opacity: 0.8;
+  /* Reduces the opacity of the button to 80% */
   text-decoration: none;
 }
+
 a {
   color: #ff7f50;
-  text-decoration: none; /* No underlining */
+  text-decoration: none;
+  /* No underlining */
 }
+
 a:hover {
-color: #cc6540;
-text-decoration: underline; /* Underlining when hovering over a link */
+  color: #cc6540;
+  text-decoration: underline;
+  /* Underlining when hovering over a link */
 }
-nav > ul > li > a:visited {
-color: #cc6540;
-text-decoration: underline;
-  }
-a:active { /* selected link */
-color: #994c30;
-  }
+
+nav>ul>li>a:visited {
+  color: #cc6540;
+  text-decoration: underline;
+}
+
+a:active {
+  /* selected link */
+  color: #994c30;
+}
+
 /* Layout styling */
 .logo {
-max-width: 250px;
+  max-width: 150px;
 }
+
 .container {
-padding: 0 15px;
+  padding: 0 15px;
 }
+
 .row {
-  margin: 25px 0; /* 25px top and bottom, 0 left and right */
+  margin: 25px 0;
+  /* 25px top and bottom, 0 left and right */
 }
+
 .row::after {
   content: "";
   clear: both;
   display: table;
 }
-#work .row { padding-bottom: 25px; border-bottom: 1px solid #ffffff;
+
+#work .row {
+  padding-bottom: 25px;
+  border-bottom: 1px solid #ffffff;
 }
+
 #hero span {
   display: block;
 }
+
 #hero h1 {
   text-align: center;
 }
+
 #hero {
   background-color: #F9D673;
   padding: 20px 0;
@@ -133,31 +186,54 @@ padding: 0 15px;
   width: 100%;
   text-align: center;
 }
+
 .center {
   text-align: center;
 }
+
 /* ==============================
 Medium devices (640px and larger)
 ================================= */
-@media only screen and (min-width: 640px) {
+@media only screen and (min-width: 641px) {
   header {
     text-align: unset;
     padding: 20px 0 13px;
   }
+
   nav {
     width: auto;
     float: right;
     margin-top: 4px;
   }
+
+  nav>ul>li {
+    display: inline-block;
+  }
+  nav > ul {
+    margin: 1em 0;
+  }
   .col-md-6 {
     width: 50%;
     text-align: center;
   }
+
+  .navtoggle li:not(:last-child) {
+    display: inline-block;
+  }
+
+  .navtoggle li:last-child {
+    display: none;
+  }
 }
+
 [class*="col-"] {
   float: left;
 }
-#about-page h3 { margin-top: 0;}
+
+#about-page h3 {
+  margin-top: 0;
+}
+
 /* ==============================
 Large devices (1024px or larger)
 ================================= */
@@ -165,32 +241,53 @@ Large devices (1024px or larger)
   .col-lg-5 {
     width: 42%
   }
+
   .col-lg-7 {
     width: 58%
   }
+
   .container {
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
   }
 }
+
 /* ==============================
 X-large devices (1440px or larger)
 ================================= */
-@media only screen and (min-width: 1440px) {
-}
+@media only screen and (min-width: 1440px) {}
+
 @keyframes color-change {
-  from {fill: #edc655;}
-  to {fill: #f76414;}
+  from {
+    fill: #edc655;
+  }
+
+  to {
+    fill: #f76414;
+  }
 }
+
 @keyframes cloud-move {
-  from {transform: translate(0,50px);}
-  to {transform: translate(200px,50px);}
+  from {
+    transform: translate(0, 50px);
+  }
+
+  to {
+    transform: translate(200px, 50px);
+  }
 }
+
 @keyframes cloud-move-reverse {
-  from {transform: translate(446px,48px);}
-  to {transform: translate(100px, 48px);}
+  from {
+    transform: translate(446px, 48px);
+  }
+
+  to {
+    transform: translate(100px, 48px);
+  }
 }
+
 .sun {
   animation-duration: 4s;
   animation-name: color-change;
@@ -198,6 +295,7 @@ X-large devices (1440px or larger)
   animation-direction: alternate;
   animation-timing-function: linear;
 }
+
 .cloud-front {
   animation-duration: 30s;
   animation-name: cloud-move;
@@ -205,6 +303,7 @@ X-large devices (1440px or larger)
   animation-direction: alternate;
   animation-timing-function: linear;
 }
+
 .cloud-back {
   animation: 34s cloud-move-reverse infinite alternate linear;
 }
