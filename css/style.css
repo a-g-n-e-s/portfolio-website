@@ -26,7 +26,9 @@ body {
   font-weight: 300;
   color: #000000;
 }
-
+.contact {
+  background-color: #3B40A7;
+}
 .navtoggle li:not(:last-child) {
   display: none;
 }
@@ -173,6 +175,7 @@ a:active {
 
 #hero span {
   display: block;
+  font-size: 1.50em;
 }
 
 #hero h1 {
@@ -189,6 +192,7 @@ a:active {
 
 .center {
   text-align: center;
+  color: #ffffff;
 }
 
 /* ==============================
